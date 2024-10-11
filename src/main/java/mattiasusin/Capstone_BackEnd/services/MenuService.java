@@ -3,11 +3,12 @@ package mattiasusin.Capstone_BackEnd.services;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
-import mattia.susin.CAPBACK.entities.Menu;
-import mattia.susin.CAPBACK.enums.TipoPiatto;
-import mattia.susin.CAPBACK.exceptions.NotFoundException;
-import mattia.susin.CAPBACK.payloads.menu.MenuDTO;
-import mattia.susin.CAPBACK.repositories.MenuRepository;
+
+import mattiasusin.Capstone_BackEnd.entities.Menu;
+import mattiasusin.Capstone_BackEnd.enums.TipoPiatto;
+import mattiasusin.Capstone_BackEnd.exceptions.NotFoundException;
+import mattiasusin.Capstone_BackEnd.payloads.menu.MenuDTO;
+import mattiasusin.Capstone_BackEnd.repositories.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

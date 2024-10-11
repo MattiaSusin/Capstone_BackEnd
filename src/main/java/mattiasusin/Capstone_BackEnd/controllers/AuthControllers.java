@@ -1,15 +1,16 @@
 package mattiasusin.Capstone_BackEnd.controllers;
 
-import mattia.susin.CAPBACK.exceptions.BadRequestException;
-import mattia.susin.CAPBACK.payloads.admin.AdminDTO;
-import mattia.susin.CAPBACK.payloads.admin.AdminLoginDTO;
-import mattia.susin.CAPBACK.payloads.admin.AdminLoginRespDTO;
-import mattia.susin.CAPBACK.payloads.admin.AdminRespDTO;
-import mattia.susin.CAPBACK.payloads.prenotazione.PrenotazioneDTO;
-import mattia.susin.CAPBACK.payloads.prenotazione.PrenotazioneRespDTO;
-import mattia.susin.CAPBACK.services.AdminsService;
-import mattia.susin.CAPBACK.services.AuthService;
-import mattia.susin.CAPBACK.services.PrenotazioniService;
+
+import mattiasusin.Capstone_BackEnd.exceptions.BadRequestException;
+import mattiasusin.Capstone_BackEnd.payloads.admin.AdminDTO;
+import mattiasusin.Capstone_BackEnd.payloads.admin.AdminLoginDTO;
+import mattiasusin.Capstone_BackEnd.payloads.admin.AdminLoginRespDTO;
+import mattiasusin.Capstone_BackEnd.payloads.admin.AdminRespDTO;
+import mattiasusin.Capstone_BackEnd.payloads.prenotazione.PrenotazioneDTO;
+import mattiasusin.Capstone_BackEnd.payloads.prenotazione.PrenotazioneRespDTO;
+import mattiasusin.Capstone_BackEnd.services.AdminsService;
+import mattiasusin.Capstone_BackEnd.services.AuthService;
+import mattiasusin.Capstone_BackEnd.services.PrenotazioniService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;

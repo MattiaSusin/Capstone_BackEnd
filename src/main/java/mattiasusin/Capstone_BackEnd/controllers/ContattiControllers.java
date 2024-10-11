@@ -1,7 +1,8 @@
 package mattiasusin.Capstone_BackEnd.controllers;
 
-import mattia.susin.CAPBACK.payloads.ContattoDTO;
-import mattia.susin.CAPBACK.services.ContattiService;
+
+import mattiasusin.Capstone_BackEnd.payloads.contatto.ContattoDTO;
+import mattiasusin.Capstone_BackEnd.services.ContattiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

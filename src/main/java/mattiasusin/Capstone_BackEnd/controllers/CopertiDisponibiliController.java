@@ -1,8 +1,10 @@
 package mattiasusin.Capstone_BackEnd.controllers;
 
-import mattia.susin.CAPBACK.entities.CopertiDisponibili;
-import mattia.susin.CAPBACK.services.CopertiDisponibiliService;
+
+import mattiasusin.Capstone_BackEnd.entities.CopertiDisponibili;
+import mattiasusin.Capstone_BackEnd.services.CopertiDisponibiliService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,12 +1,13 @@
 package mattiasusin.Capstone_BackEnd.services;
 
-import mattia.susin.CAPBACK.entities.Admin;
-import mattia.susin.CAPBACK.exceptions.BadRequestException;
-import mattia.susin.CAPBACK.exceptions.NotFoundException;
-import mattia.susin.CAPBACK.payloads.admin.AdminDTO;
-import mattia.susin.CAPBACK.repositories.AdminsRepository;
-import mattia.susin.CAPBACK.tools.MailgunSender;
+import mattiasusin.Capstone_BackEnd.entities.Admin;
+import mattiasusin.Capstone_BackEnd.exceptions.BadRequestException;
+import mattiasusin.Capstone_BackEnd.exceptions.NotFoundException;
+import mattiasusin.Capstone_BackEnd.payloads.admin.AdminDTO;
+import mattiasusin.Capstone_BackEnd.repositories.AdminsRepository;
+import mattiasusin.Capstone_BackEnd.tools.MailgunSender;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

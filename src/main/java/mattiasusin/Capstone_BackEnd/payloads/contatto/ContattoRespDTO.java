@@ -1,4 +1,4 @@
-package mattiasusin.Capstone_BackEnd.payloads;
+package mattiasusin.Capstone_BackEnd.payloads.contatto;
 
 import java.util.UUID;
 

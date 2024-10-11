@@ -4,7 +4,8 @@ package mattiasusin.Capstone_BackEnd.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import mattia.susin.CAPBACK.enums.TipoPiatto;
+
+import mattiasusin.Capstone_BackEnd.enums.TipoPiatto;
 
 import java.util.UUID;
 

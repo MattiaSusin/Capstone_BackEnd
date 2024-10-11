@@ -1,4 +1,4 @@
-package mattiasusin.Capstone_BackEnd.payloads;
+package mattiasusin.Capstone_BackEnd.payloads.contatto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

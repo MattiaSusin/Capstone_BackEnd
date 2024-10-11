@@ -1,6 +1,7 @@
 package mattiasusin.Capstone_BackEnd.repositories;
 
-import mattia.susin.CAPBACK.entities.Admin;
+
+import mattiasusin.Capstone_BackEnd.entities.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

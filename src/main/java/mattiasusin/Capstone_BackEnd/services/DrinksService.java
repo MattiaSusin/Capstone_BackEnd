@@ -1,10 +1,11 @@
 package mattiasusin.Capstone_BackEnd.services;
 
-import mattia.susin.CAPBACK.entities.Drink;
-import mattia.susin.CAPBACK.enums.TipoDrink;
-import mattia.susin.CAPBACK.exceptions.NotFoundException;
-import mattia.susin.CAPBACK.payloads.drink.DrinkDTO;
-import mattia.susin.CAPBACK.repositories.DrinksRepository;
+
+import mattiasusin.Capstone_BackEnd.entities.Drink;
+import mattiasusin.Capstone_BackEnd.enums.TipoDrink;
+import mattiasusin.Capstone_BackEnd.exceptions.NotFoundException;
+import mattiasusin.Capstone_BackEnd.payloads.drink.DrinkDTO;
+import mattiasusin.Capstone_BackEnd.repositories.DrinksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

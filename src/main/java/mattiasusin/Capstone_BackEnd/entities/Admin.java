@@ -3,7 +3,8 @@ package mattiasusin.Capstone_BackEnd.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
-import mattia.susin.CAPBACK.enums.Ruolo;
+
+import mattiasusin.Capstone_BackEnd.enums.Ruolo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

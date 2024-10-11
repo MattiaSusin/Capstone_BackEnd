@@ -1,10 +1,11 @@
 package mattiasusin.Capstone_BackEnd.services;
 
-import mattia.susin.CAPBACK.entities.Admin;
-import mattia.susin.CAPBACK.exceptions.UnauthorizedException;
-import mattia.susin.CAPBACK.payloads.admin.AdminLoginDTO;
-import mattia.susin.CAPBACK.payloads.prenotazione.PrenotazioneLoginDTO;
-import mattia.susin.CAPBACK.security.JWTTools;
+
+import mattiasusin.Capstone_BackEnd.entities.Admin;
+import mattiasusin.Capstone_BackEnd.exceptions.UnauthorizedException;
+import mattiasusin.Capstone_BackEnd.payloads.admin.AdminLoginDTO;
+import mattiasusin.Capstone_BackEnd.payloads.prenotazione.PrenotazioneLoginDTO;
+import mattiasusin.Capstone_BackEnd.security.JWTTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

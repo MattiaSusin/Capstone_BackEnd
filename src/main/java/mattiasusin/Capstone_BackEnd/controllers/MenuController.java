@@ -1,10 +1,10 @@
 package mattiasusin.Capstone_BackEnd.controllers;
 
-import mattia.susin.CAPBACK.entities.Menu;
-import mattia.susin.CAPBACK.exceptions.BadRequestException;
-import mattia.susin.CAPBACK.payloads.menu.MenuDTO;
-import mattia.susin.CAPBACK.payloads.menu.MenuRespDTO;
-import mattia.susin.CAPBACK.services.MenuService;
+import mattiasusin.Capstone_BackEnd.entities.Menu;
+import mattiasusin.Capstone_BackEnd.exceptions.BadRequestException;
+import mattiasusin.Capstone_BackEnd.payloads.menu.MenuDTO;
+import mattiasusin.Capstone_BackEnd.payloads.menu.MenuRespDTO;
+import mattiasusin.Capstone_BackEnd.services.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;

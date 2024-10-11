@@ -3,7 +3,8 @@ package mattiasusin.Capstone_BackEnd.tools;
 import kong.unirest.core.HttpResponse;
 import kong.unirest.core.JsonNode;
 import kong.unirest.core.Unirest;
-import mattia.susin.CAPBACK.entities.Prenotazione;
+
+import mattiasusin.Capstone_BackEnd.entities.Prenotazione;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

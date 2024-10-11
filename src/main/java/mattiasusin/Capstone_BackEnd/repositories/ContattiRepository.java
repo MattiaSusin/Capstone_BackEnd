@@ -1,6 +1,7 @@
 package mattiasusin.Capstone_BackEnd.repositories;
 
-import mattia.susin.CAPBACK.entities.Contatto;
+
+import mattiasusin.Capstone_BackEnd.entities.Contatto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

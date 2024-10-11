@@ -1,14 +1,14 @@
 package mattiasusin.Capstone_BackEnd.services;
 
-import mattia.susin.CAPBACK.entities.CopertiDisponibili;
-import mattia.susin.CAPBACK.entities.Prenotazione;
-import mattia.susin.CAPBACK.exceptions.BadRequestException;
-import mattia.susin.CAPBACK.exceptions.NotFoundException;
-import mattia.susin.CAPBACK.payloads.prenotazione.PrenotazioneDTO;
-import mattia.susin.CAPBACK.payloads.prenotazione.PrenotazioneRespDTO;
-import mattia.susin.CAPBACK.repositories.CopertiDisponibiliRepository;
-import mattia.susin.CAPBACK.repositories.PrenotazioneRepository;
-import mattia.susin.CAPBACK.tools.MailgunSender;
+import mattiasusin.Capstone_BackEnd.entities.CopertiDisponibili;
+import mattiasusin.Capstone_BackEnd.entities.Prenotazione;
+import mattiasusin.Capstone_BackEnd.exceptions.BadRequestException;
+import mattiasusin.Capstone_BackEnd.exceptions.NotFoundException;
+import mattiasusin.Capstone_BackEnd.payloads.prenotazione.PrenotazioneDTO;
+import mattiasusin.Capstone_BackEnd.payloads.prenotazione.PrenotazioneRespDTO;
+import mattiasusin.Capstone_BackEnd.repositories.CopertiDisponibiliRepository;
+import mattiasusin.Capstone_BackEnd.repositories.PrenotazioneRepository;
+import mattiasusin.Capstone_BackEnd.tools.MailgunSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

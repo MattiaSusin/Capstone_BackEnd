@@ -1,10 +1,12 @@
 package mattiasusin.Capstone_BackEnd.controllers;
 
-import mattia.susin.CAPBACK.entities.Prenotazione;
-import mattia.susin.CAPBACK.payloads.prenotazione.PrenotazioneDTO;
-import mattia.susin.CAPBACK.payloads.prenotazione.PrenotazioneRespDTO;
-import mattia.susin.CAPBACK.services.PrenotazioniService;
+
+import mattiasusin.Capstone_BackEnd.entities.Prenotazione;
+import mattiasusin.Capstone_BackEnd.payloads.prenotazione.PrenotazioneDTO;
+import mattiasusin.Capstone_BackEnd.payloads.prenotazione.PrenotazioneRespDTO;
+import mattiasusin.Capstone_BackEnd.services.PrenotazioniService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -28,8 +30,8 @@ public class PrenotazioniController {
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public Page<Prenotazione> findAllPrenotazione(@RequestParam(defaultValue = "0") int page,
-                                             @RequestParam(defaultValue = "10") int size,
-                                             @RequestParam(defaultValue = "id") String sortBy) {
+                                                  @RequestParam(defaultValue = "10") int size,
+                                                  @RequestParam(defaultValue = "id") String sortBy) {
         return this.prenotazioniService.findAllPrenotazione(page, size, sortBy);
     }
 

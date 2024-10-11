@@ -2,7 +2,7 @@ package mattiasusin.Capstone_BackEnd.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-import mattia.susin.CAPBACK.exceptions.BadRequestException;
+import mattiasusin.Capstone_BackEnd.exceptions.BadRequestException;
 
 import java.time.LocalDate;
 import java.util.UUID;

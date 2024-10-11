@@ -1,8 +1,9 @@
 package mattiasusin.Capstone_BackEnd.services;
 
-import mattia.susin.CAPBACK.payloads.ContattoDTO;
-import mattia.susin.CAPBACK.repositories.ContattiRepository;
-import mattia.susin.CAPBACK.tools.MailgunSender;
+
+import mattiasusin.Capstone_BackEnd.payloads.contatto.ContattoDTO;
+import mattiasusin.Capstone_BackEnd.repositories.ContattiRepository;
+import mattiasusin.Capstone_BackEnd.tools.MailgunSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

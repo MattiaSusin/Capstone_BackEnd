@@ -1,8 +1,10 @@
 package mattiasusin.Capstone_BackEnd.services;
 
-import mattia.susin.CAPBACK.entities.CopertiDisponibili;
-import mattia.susin.CAPBACK.repositories.CopertiDisponibiliRepository;
+
+import mattiasusin.Capstone_BackEnd.entities.CopertiDisponibili;
+import mattiasusin.Capstone_BackEnd.repositories.CopertiDisponibiliRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

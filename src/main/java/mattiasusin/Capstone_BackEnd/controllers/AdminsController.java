@@ -1,8 +1,10 @@
 package mattiasusin.Capstone_BackEnd.controllers;
 
-import mattia.susin.CAPBACK.entities.Admin;
-import mattia.susin.CAPBACK.services.AdminsService;
+
+import mattiasusin.Capstone_BackEnd.entities.Admin;
+import mattiasusin.Capstone_BackEnd.services.AdminsService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;

@@ -4,9 +4,10 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import mattia.susin.CAPBACK.entities.Admin;
-import mattia.susin.CAPBACK.exceptions.UnauthorizedException;
-import mattia.susin.CAPBACK.services.AdminsService;
+
+import mattiasusin.Capstone_BackEnd.entities.Admin;
+import mattiasusin.Capstone_BackEnd.exceptions.UnauthorizedException;
+import mattiasusin.Capstone_BackEnd.services.AdminsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

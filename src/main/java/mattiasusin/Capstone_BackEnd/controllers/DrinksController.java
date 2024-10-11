@@ -1,10 +1,11 @@
 package mattiasusin.Capstone_BackEnd.controllers;
 
-import mattia.susin.CAPBACK.entities.Drink;
-import mattia.susin.CAPBACK.exceptions.BadRequestException;
-import mattia.susin.CAPBACK.payloads.drink.DrinkDTO;
-import mattia.susin.CAPBACK.payloads.drink.DrinkRespDTO;
-import mattia.susin.CAPBACK.services.DrinksService;
+
+import mattiasusin.Capstone_BackEnd.entities.Drink;
+import mattiasusin.Capstone_BackEnd.exceptions.BadRequestException;
+import mattiasusin.Capstone_BackEnd.payloads.drink.DrinkDTO;
+import mattiasusin.Capstone_BackEnd.payloads.drink.DrinkRespDTO;
+import mattiasusin.Capstone_BackEnd.services.DrinksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -31,8 +32,8 @@ public class DrinksController {
 
     @GetMapping
     public Page<Drink> findAllDrink(@RequestParam(defaultValue = "0") int page,
-                                   @RequestParam(defaultValue = "10") int size,
-                                   @RequestParam(defaultValue = "id") String sortBy) {
+                                    @RequestParam(defaultValue = "10") int size,
+                                    @RequestParam(defaultValue = "id") String sortBy) {
         return this.drinksService.findAllDrink(page, size, sortBy);
     }
 

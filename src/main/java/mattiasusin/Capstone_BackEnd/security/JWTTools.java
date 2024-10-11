@@ -2,8 +2,8 @@ package mattiasusin.Capstone_BackEnd.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import mattia.susin.CAPBACK.entities.Admin;
-import mattia.susin.CAPBACK.exceptions.UnauthorizedException;
+import mattiasusin.Capstone_BackEnd.entities.Admin;
+import mattiasusin.Capstone_BackEnd.exceptions.UnauthorizedException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
