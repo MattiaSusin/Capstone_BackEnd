@@ -30,7 +30,7 @@ public class Config {
 
 		httpSecurity.sessionManagement(http -> http.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
-		httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/**").permitAll().anyRequest().authenticated());
+		httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/**").permitAll());
 
 		httpSecurity.cors(Customizer.withDefaults());
 
@@ -45,7 +45,7 @@ public class Config {
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList("http://localhost:3301"));
+		configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173"));
 
 		configuration.setAllowedMethods(Arrays.asList(""));
 		configuration.setAllowedHeaders(Arrays.asList(""));
