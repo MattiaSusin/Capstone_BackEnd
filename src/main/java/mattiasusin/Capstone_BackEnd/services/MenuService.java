@@ -40,7 +40,7 @@ public class MenuService {
     // 1 --> GET ALL
 
     public Page<Menu> findAllMenu(int page, int size, String sortBy) {
-        if (page > 100) page = 100;
+        if (page > 6) page = 6;
 
         Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
         return this.menuRepository.findAll(pageable);

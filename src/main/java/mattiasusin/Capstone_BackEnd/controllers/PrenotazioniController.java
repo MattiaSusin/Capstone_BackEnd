@@ -17,6 +17,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/prenotazioni")
+@CrossOrigin(origins = {"http://localhost:5173/"})
 public class PrenotazioniController {
 
     // IMPORTI
