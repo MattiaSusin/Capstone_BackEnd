@@ -1,7 +1,10 @@
 package mattiasusin.Capstone_BackEnd.services;
 
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import mattiasusin.Capstone_BackEnd.entities.Drink;
+import mattiasusin.Capstone_BackEnd.entities.Menu;
 import mattiasusin.Capstone_BackEnd.enums.TipoDrink;
 import mattiasusin.Capstone_BackEnd.exceptions.NotFoundException;
 import mattiasusin.Capstone_BackEnd.payloads.drink.DrinkDTO;
@@ -13,7 +16,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.UUID;
 
 @Service
@@ -25,6 +30,9 @@ public class DrinksService {
 
     @Autowired
     private PasswordEncoder bcrypt;
+
+    @Autowired
+    private Cloudinary cloudinaryUploader;
 
     // METODI
 
@@ -78,5 +86,15 @@ public class DrinksService {
         this.drinksRepository.delete(found);
     }
 
+    // 6 --> UPLOAD CLOUDIARY
+
+    public void uploadImage(MultipartFile file, UUID drinkId) throws IOException {
+        String url = (String) cloudinaryUploader.uploader().upload(file.getBytes(), ObjectUtils.emptyMap()).get("url");
+        System.out.println("URL: " + url);
+        Drink drink = drinksRepository.findById(drinkId).orElseThrow(() -> new NotFoundException(drinkId));
+        drink.setImmagine(url);
+
+        drinksRepository.save(drink);
+    }
 
 }

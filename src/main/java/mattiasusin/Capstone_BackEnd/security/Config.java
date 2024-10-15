@@ -46,9 +46,11 @@ public class Config {
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
 		configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173"));
-
+		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+		configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept"));
+		configuration.setAllowCredentials(true); // Se necessario, per autenticazione con cookie
 		configuration.setAllowedMethods(Arrays.asList(""));
-		configuration.setAllowedHeaders(Arrays.asList(""));
+
 
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		source.registerCorsConfiguration("/**", configuration);
