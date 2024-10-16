@@ -1,6 +1,7 @@
 package mattiasusin.Capstone_BackEnd.controllers;
 
 import mattiasusin.Capstone_BackEnd.entities.Menu;
+import mattiasusin.Capstone_BackEnd.enums.TipoPiatto;
 import mattiasusin.Capstone_BackEnd.exceptions.BadRequestException;
 import mattiasusin.Capstone_BackEnd.payloads.menu.MenuDTO;
 import mattiasusin.Capstone_BackEnd.payloads.menu.MenuRespDTO;
@@ -8,6 +9,7 @@ import mattiasusin.Capstone_BackEnd.services.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -90,6 +92,19 @@ public class MenuController {
     public void uploadImage(@RequestParam("immagine") MultipartFile image,@PathVariable UUID menuId) throws IOException {
 
         this.menuService.uploadImage(image,menuId);
+    }
+
+
+
+    // 7 --> FIND BY TIPO PIATTO
+    @GetMapping("/filtro")
+    public ResponseEntity<Page<Menu>> filterMenuByTipoPiatto(@RequestParam TipoPiatto tipoPiatto,
+                                                             @RequestParam(defaultValue = "0") int page,
+                                                             @RequestParam(defaultValue = "6") int size,
+                                                             @RequestParam(defaultValue = "id") String sortBy) {
+
+        Page<Menu> filteredMenu = this.menuService.findByTipoPiatto(tipoPiatto, page, size, sortBy);
+        return new ResponseEntity<>(filteredMenu, HttpStatus.OK);
     }
 
 }

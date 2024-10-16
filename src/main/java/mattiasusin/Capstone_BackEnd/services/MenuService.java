@@ -48,12 +48,12 @@ public class MenuService {
 
     // 2 --> POST/SAVE
 
-    public Menu savedMenu(MenuDTO body){
+    public Menu savedMenu(MenuDTO body) {
 
         // 2 --> Se va tutto bene aggiungo i campi 'server-generated' ovvero l'avatarUrl
 
         TipoPiatto tipoPiatto = TipoPiatto.valueOf(body.tipoPiatto());
-        Menu newMenu = new Menu(body.titolo(),body.descrizione(),body.prezzo(),body.tipoPiatto(),body.immagine());
+        Menu newMenu = new Menu(body.titolo(), body.descrizione(), body.prezzo(), body.tipoPiatto(), body.immagine());
 
         Menu savedMenu = this.menuRepository.save(newMenu);
 
@@ -68,7 +68,7 @@ public class MenuService {
 
     // 4 --> PUT
 
-    public Menu findByIdAndUpdateMenu(UUID menuId, Menu newMenuData){
+    public Menu findByIdAndUpdateMenu(UUID menuId, Menu newMenuData) {
 
 
         Menu found = this.findByIdMenu(menuId);
@@ -92,13 +92,22 @@ public class MenuService {
 
     // 6 --> UPLOAD CLOUDIARY
 
-    public void uploadImage(MultipartFile file,UUID menuId) throws IOException {
+    public void uploadImage(MultipartFile file, UUID menuId) throws IOException {
         String url = (String) cloudinaryUploader.uploader().upload(file.getBytes(), ObjectUtils.emptyMap()).get("url");
         System.out.println("URL: " + url);
         Menu menu = menuRepository.findById(menuId).orElseThrow(() -> new NotFoundException(menuId));
         menu.setImmagine(url);
 
         menuRepository.save(menu);
+    }
+
+    // 7 --> FIND BY TIPO PIATTO
+
+    public Page<Menu> findByTipoPiatto(TipoPiatto tipoPiatto, int page, int size, String sortBy) {
+
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+
+        return this.menuRepository.findByTipoPiatto(tipoPiatto, pageable);
     }
 
 }
