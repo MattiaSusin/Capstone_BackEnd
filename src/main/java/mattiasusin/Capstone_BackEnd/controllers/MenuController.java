@@ -36,7 +36,7 @@ public class MenuController {
 
     @GetMapping("view/food")
     public Page<Menu> findAllMenu(@RequestParam(defaultValue = "0") int page,
-                                  @RequestParam(defaultValue = "6") int size,
+                                  @RequestParam(defaultValue = "100") int size,
                                   @RequestParam(defaultValue = "id") String sortBy) {
         return this.menuService.findAllMenu(page, size, sortBy);
     }

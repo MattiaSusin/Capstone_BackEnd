@@ -21,7 +21,7 @@ public class ContattiControllers {
 
     // 1 --> POST
 
-    @PostMapping()
+    @PostMapping("/invia")
     public ResponseEntity<String> sendEmailToAzienda(
             @RequestBody ContattoDTO contattoRichiestaDTO) {
         String response = contattiService.sendEmail(contattoRichiestaDTO);
