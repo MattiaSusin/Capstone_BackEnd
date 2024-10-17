@@ -6,6 +6,7 @@ import com.cloudinary.utils.ObjectUtils;
 import mattiasusin.Capstone_BackEnd.entities.Drink;
 import mattiasusin.Capstone_BackEnd.entities.Menu;
 import mattiasusin.Capstone_BackEnd.enums.TipoDrink;
+import mattiasusin.Capstone_BackEnd.enums.TipoPiatto;
 import mattiasusin.Capstone_BackEnd.exceptions.NotFoundException;
 import mattiasusin.Capstone_BackEnd.payloads.drink.DrinkDTO;
 import mattiasusin.Capstone_BackEnd.repositories.DrinksRepository;
@@ -95,6 +96,16 @@ public class DrinksService {
         drink.setImmagine(url);
 
         drinksRepository.save(drink);
+    }
+
+
+    // 7 --> FIND BY TIPO PIATTO
+
+    public Page<Drink> findByTipoDrink(TipoDrink tipoDrink, int page, int size, String sortBy) {
+
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+
+        return this.drinksRepository.findByTipoDrink(tipoDrink, pageable);
     }
 
 }

@@ -2,6 +2,9 @@ package mattiasusin.Capstone_BackEnd.controllers;
 
 
 import mattiasusin.Capstone_BackEnd.entities.Drink;
+import mattiasusin.Capstone_BackEnd.entities.Menu;
+import mattiasusin.Capstone_BackEnd.enums.TipoDrink;
+import mattiasusin.Capstone_BackEnd.enums.TipoPiatto;
 import mattiasusin.Capstone_BackEnd.exceptions.BadRequestException;
 import mattiasusin.Capstone_BackEnd.payloads.drink.DrinkDTO;
 import mattiasusin.Capstone_BackEnd.payloads.drink.DrinkRespDTO;
@@ -9,6 +12,7 @@ import mattiasusin.Capstone_BackEnd.services.DrinksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -92,4 +96,15 @@ public class DrinksController {
         this.drinksService.uploadImage(image,drinkId);
     }
 
+    // 7 --> FIND BY TIPO PIATTO
+
+    @GetMapping("/filtro")
+    public ResponseEntity<Page<Drink>> filterMenuByTipoDrink(@RequestParam TipoDrink tipoDrink,
+                                                              @RequestParam(defaultValue = "0") int page,
+                                                              @RequestParam(defaultValue = "6") int size,
+                                                              @RequestParam(defaultValue = "id") String sortBy) {
+
+        Page<Drink> filteredDrink = this.drinksService.findByTipoDrink(tipoDrink, page, size, sortBy);
+        return new ResponseEntity<>(filteredDrink, HttpStatus.OK);
+    }
 }

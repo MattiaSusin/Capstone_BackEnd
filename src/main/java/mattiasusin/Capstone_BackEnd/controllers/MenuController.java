@@ -97,14 +97,15 @@ public class MenuController {
 
 
     // 7 --> FIND BY TIPO PIATTO
+
     @GetMapping("/filtro")
-    public ResponseEntity<Page<Menu>> filterMenuByTipoPiatto(@RequestParam TipoPiatto tipoPiatto,
+    public ResponseEntity<Page<Menu>> filterMenuByTipoDrink(@RequestParam TipoPiatto tipoPiatto,
                                                              @RequestParam(defaultValue = "0") int page,
                                                              @RequestParam(defaultValue = "6") int size,
                                                              @RequestParam(defaultValue = "id") String sortBy) {
 
-        Page<Menu> filteredMenu = this.menuService.findByTipoPiatto(tipoPiatto, page, size, sortBy);
-        return new ResponseEntity<>(filteredMenu, HttpStatus.OK);
+        Page<Menu> filterMenu = this.menuService.findByTipoPiatto(tipoPiatto, page, size, sortBy);
+        return new ResponseEntity<>(filterMenu, HttpStatus.OK);
     }
 
 }
