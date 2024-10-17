@@ -13,6 +13,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -62,7 +64,40 @@ public class PrenotazioniController {
         return this.prenotazioniService.findIdAndUpdatePrenotazione(clienteId, body);
     }
 
+    // 6 --> FIND BY NOME
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/cercaNome")
+    public List<Prenotazione> findByNomePrenotazione(@RequestParam String nome) {
+        return prenotazioniService.findByNomePrenotazione(nome);
+    }
+
     // 7 --> FIND BY EMAIL --> prenotazioneRepository
+
+
+    // 8 --> FIND BY COGNOME
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/cercaCognome")
+    public List<Prenotazione> findByCognomePrenotazione(@RequestParam String cognome) {
+        return prenotazioniService.findByCognomePrenotazione(cognome);
+    }
+
+    // 9 --> FIND BY DATA
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/data/{data}")
+    public List<Prenotazione> getPrenotazioniByData(@PathVariable String data) {
+        LocalDate localDate = LocalDate.parse(data);
+        return prenotazioniService.findByDataPrenotazione(localDate);
+    }
+
+    // 10 --> FIND BY TELEFONO
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/telefono")
+    public List<Prenotazione> findByTelefonoPrenotazione(@RequestParam String telefono) {
+        return prenotazioniService.findByTelefonoPrenotazione(telefono);
+    }
 
 
 

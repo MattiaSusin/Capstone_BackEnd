@@ -132,10 +132,32 @@ public class PrenotazioniService {
         return new PrenotazioneRespDTO(this.prenotazioneRepository.save(found).getId());
     }
 
+    // 6 --> FIND BY NOME
+
+    public List<Prenotazione> findByNomePrenotazione(String nome) {
+        return prenotazioneRepository.findByNome(nome);
+    }
+
 
     // 7 --> EMAIL
     public Prenotazione findByEmail(String email) {
         return prenotazioneRepository.findByEmail(email).orElseThrow(() -> new NotFoundException("L'utente con l'email " + email + " non è stato trovato!"));
     }
 
+    // 8 --> FIND BY COGNOME
+
+    public List<Prenotazione> findByCognomePrenotazione(String cognome) {
+        return prenotazioneRepository.findByCognome(cognome);
+    }
+
+    // 9 --> FIND BY DATA
+    public List<Prenotazione> findByDataPrenotazione(LocalDate data) {
+        return prenotazioneRepository.findByData(data);
+    }
+
+    // 10 --> FIND BY TELEFONO
+
+    public List<Prenotazione> findByTelefonoPrenotazione(String telefono) {
+        return prenotazioneRepository.findByTelefono(telefono);
+    }
 }

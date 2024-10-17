@@ -38,7 +38,7 @@ public class JWTCheckFilter extends OncePerRequestFilter {
 			throw new UnauthorizedException("Per favore inserisci correttamente il token nell'Authorization Header");
 
 
-		String accessToken = authHeader.substring(7); // "eyJhbGciOiJIUzM4NCJ9.eyJpYXQiOjE3MjY0ODE1MDMsImV4cCI6MTcyNzA4NjMwMywic3ViIjoiOTFkMTg2MGItZjE2Yy00MTYwLWIyYTYtODU2NWY0MzY5MTBiIn0.l58gBS6yJnRom0gYNRECl3W_e1B0TmdNkOivPncYP0fO3LIC2QXwvgft71jNYhfJ"
+		String accessToken = authHeader.substring(7);
 
 		jwtTools.verifyToken(accessToken);
 
@@ -60,13 +60,7 @@ public class JWTCheckFilter extends OncePerRequestFilter {
 
 	@Override
 	protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-		// Fare l'override di questo metodo ci serve per 'disabilitare' questo filtro per alcune richieste,
-		// ad esempio richieste su determinati endpoint oppure direttamente su determinati controller
-		// Nel nostro caso ad esempio ci interessa che il filtro, che dovrà verificare i token, non venga chiamato in causa
-		// per tutte le richieste di Login o di Register perché sono richieste che non devono richiedere un token per poter essere eseguite
-		// Se gli endpoint di Login e Register si trovano nello stesso controller avranno lo stesso URL di base "http://localhost:3001/auth/**"
 
-		// Posso quindi escludere dal controllo del filtro tutte le richieste verso gli endpoint che contengono /auth nell'URL
 		return new AntPathMatcher().match("/auth/**", request.getServletPath())||
 				new AntPathMatcher().match("/contatti/**", request.getServletPath())||
 				new AntPathMatcher().match("/menu/view/**", request.getServletPath());
