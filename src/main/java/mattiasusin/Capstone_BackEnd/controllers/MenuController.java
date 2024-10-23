@@ -36,7 +36,7 @@ public class MenuController {
 
     @GetMapping("view/food")
     public Page<Menu> findAllMenu(@RequestParam(defaultValue = "0") int page,
-                                  @RequestParam(defaultValue = "6") int size,
+                                  @RequestParam(defaultValue = "100") int size,
                                   @RequestParam(defaultValue = "id") String sortBy) {
         return this.menuService.findAllMenu(page, size, sortBy);
     }
@@ -99,9 +99,9 @@ public class MenuController {
     // 7 --> FIND BY TIPO PIATTO
 
     @GetMapping("/filtro")
-    public ResponseEntity<Page<Menu>> filterMenuByTipoDrink(@RequestParam TipoPiatto tipoPiatto,
+    public ResponseEntity<Page<Menu>> filterMenuByTipoPiatto(@RequestParam TipoPiatto tipoPiatto,
                                                              @RequestParam(defaultValue = "0") int page,
-                                                             @RequestParam(defaultValue = "6") int size,
+                                                             @RequestParam(defaultValue = "10") int size,
                                                              @RequestParam(defaultValue = "id") String sortBy) {
 
         Page<Menu> filterMenu = this.menuService.findByTipoPiatto(tipoPiatto, page, size, sortBy);

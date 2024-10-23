@@ -14,16 +14,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class CopertiDisponibiliService {
 
-
     //IMPORTI
-
     @Autowired
     private CopertiDisponibiliRepository copertiDisponibiliRepository;
 
     // METODI
 
     // 1 --> GET ALL
-
     public Page<CopertiDisponibili> findAllCoperti(int page, int size, String sortBy) {
         if (page > 100) page = 100;
 

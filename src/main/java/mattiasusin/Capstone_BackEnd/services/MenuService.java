@@ -50,8 +50,6 @@ public class MenuService {
 
     public Menu savedMenu(MenuDTO body) {
 
-        // 2 --> Se va tutto bene aggiungo i campi 'server-generated' ovvero l'avatarUrl
-
         TipoPiatto tipoPiatto = TipoPiatto.valueOf(body.tipoPiatto());
         Menu newMenu = new Menu(body.titolo(), body.descrizione(), body.prezzo(), body.tipoPiatto(), body.immagine());
 

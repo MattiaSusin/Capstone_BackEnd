@@ -37,7 +37,7 @@ public class DrinksController {
 
     // 1 --> GET ALL
 
-    @GetMapping
+    @GetMapping("view/drink")
     public Page<Drink> findAllDrink(@RequestParam(defaultValue = "0") int page,
                                     @RequestParam(defaultValue = "10") int size,
                                     @RequestParam(defaultValue = "id") String sortBy) {
@@ -101,7 +101,7 @@ public class DrinksController {
     @GetMapping("/filtro")
     public ResponseEntity<Page<Drink>> filterMenuByTipoDrink(@RequestParam TipoDrink tipoDrink,
                                                               @RequestParam(defaultValue = "0") int page,
-                                                              @RequestParam(defaultValue = "6") int size,
+                                                              @RequestParam(defaultValue = "10") int size,
                                                               @RequestParam(defaultValue = "id") String sortBy) {
 
         Page<Drink> filteredDrink = this.drinksService.findByTipoDrink(tipoDrink, page, size, sortBy);
