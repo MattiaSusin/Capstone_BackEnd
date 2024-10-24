@@ -38,7 +38,6 @@ public class PrenotazioniController {
 
     // 2 --> POST/SAVE --> AuthControllers
 
-
     // 3 --> GET ID
     @GetMapping("/{prenotazioneId}")
     @PreAuthorize("hasAuthority('ADMIN')")
@@ -73,14 +72,6 @@ public class PrenotazioniController {
     // 7 --> FIND BY EMAIL --> prenotazioneRepository
 
 
-    // 8 --> FIND BY COGNOME
-
-    @PreAuthorize("hasAuthority('ADMIN')")
-    @GetMapping("/cercaCognome")
-    public List<Prenotazione> findByCognomePrenotazione(@RequestParam String cognome) {
-        return prenotazioniService.findByCognomePrenotazione(cognome);
-    }
-
     // 9 --> FIND BY DATA
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/data/{data}")
@@ -97,6 +88,13 @@ public class PrenotazioniController {
         return prenotazioniService.findByTelefonoPrenotazione(telefono);
     }
 
+    // 11 --> FIND BY ALL
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/cercaAll")
+    public List<Prenotazione> cercaPrenotazione(@RequestParam String query) {
+        return prenotazioniService.cercaPrenotazione(query);
+    }
 
 
 }

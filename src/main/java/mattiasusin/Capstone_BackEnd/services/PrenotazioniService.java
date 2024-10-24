@@ -158,4 +158,10 @@ public class PrenotazioniService {
     public List<Prenotazione> findByTelefonoPrenotazione(String telefono) {
         return prenotazioneRepository.findByTelefono(telefono);
     }
+
+    // 11 --> FIND BY ALL
+
+    public List<Prenotazione> cercaPrenotazione(String query) {
+        return prenotazioneRepository.cercaGlobale(query.toLowerCase());
+    }
 }
