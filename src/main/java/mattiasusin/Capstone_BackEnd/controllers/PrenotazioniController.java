@@ -32,10 +32,8 @@ public class PrenotazioniController {
 
     @GetMapping
     @PreAuthorize("hasAuthority('ADMIN')")
-    public Page<Prenotazione> findAllPrenotazione(@RequestParam(defaultValue = "0") int page,
-                                                  @RequestParam(defaultValue = "10") int size,
-                                                  @RequestParam(defaultValue = "id") String sortBy) {
-        return this.prenotazioniService.findAllPrenotazione(page, size, sortBy);
+    public List<Prenotazione> findAllPrenotazione(@RequestParam(defaultValue = "id") String sortBy) {
+        return this.prenotazioniService.findAllPrenotazione(sortBy);
     }
 
     // 2 --> POST/SAVE --> AuthControllers

@@ -40,11 +40,9 @@ public class PrenotazioniService {
     // METODI
 
     // 1 --> GET ALL
-    public Page<Prenotazione> findAllPrenotazione(int page, int size, String sortBy) {
-        if (page > 100) page = 100;
-
-        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
-        return this.prenotazioneRepository.findAll(pageable);
+    public List<Prenotazione> findAllPrenotazione(String sortBy) {
+        Sort sort = Sort.by(sortBy);
+        return this.prenotazioneRepository.findAll(sort);
     }
 
 
